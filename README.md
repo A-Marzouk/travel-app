@@ -1,12 +1,13 @@
-# Natural Language processing App Project
+# Travel planning App Project
 
 ## Overview
-This project works as a demo for Natural language processing using an external API
-(Aylien)
+This project works as a demo for Travel Planning Application using different external APIs.
 
-## What is NLP
-Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence concerned with the interactions between computers and human (natural) languages, in particular how to program computers to 
-process and analyze large amounts of natural language data.
+
+## How it works?
+The idea behind this app is very simple, the user enters the location and date of his coming trip and
+the application gives him information about the location at this data. So that user can easily
+plan his next travel.
 
 ## Technologies
 Node.js | Express 

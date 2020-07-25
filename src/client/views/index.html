@@ -21,9 +21,14 @@
 
         <form id="textEvaluateForm" onsubmit="return Client.handleFormSubmit(event)">
             <div class="form-group">
-                <label for="textInput">Location:</label>
-                <input type="text" class="form-control" id="textInput" name="textInput" aria-describedby="emailHelp" placeholder="Enter location..." required>
+                <label for="locationInput">Location:</label>
+                <input type="text" class="form-control" id="locationInput" name="locationInput"  placeholder="Enter location..." required>
                 <div id="errorFeedback" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="dateInput">Date of the trip:</label>
+                <input type="date" class="form-control" id="dateInput" name="dateInput"  placeholder="Enter Date..." required>
+                <div id="dateErrorFeedback" class="error"></div>
             </div>
             <button type="submit" class="btn btn-primary">Get Information</button>
         </form>
@@ -32,7 +37,7 @@
         <div id="evaluationWrapper" class="evaluationText">
             <hr>
             <h4>
-                Evaluation:
+                Latitude and Longitude:
             </h4>
 
             <div id="evaluation">
@@ -46,12 +51,19 @@
 
     <script>
         // Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
+
+        // comment service worker while developing.
+        //
+        // if ('serviceWorker' in navigator) {
+        //     // Use the window load event to keep the page load performant
+        //     window.addEventListener('load', () => {
+        //         navigator.serviceWorker.register('/service-worker.js');
+        //     });
+        // }
+
+        // allow only future dates:
+        let currentDate = new Date();
+        document.querySelector('#dateInput').setAttribute('min', currentDate.toISOString().substring(0,10));
     </script>
 
 </body>
