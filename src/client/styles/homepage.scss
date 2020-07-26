@@ -20,3 +20,15 @@ h1{
 #evaluation{
   font-size: 20px;
 }
+
+form{
+  max-width: 450px;
+  padding:40px;
+  margin-top: 20px;
+  background: white;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 10px 10px 29px 1px rgba(10,2,10,0.53);
+  -moz-box-shadow: 10px 10px 29px 1px rgba(10,2,10,0.53);
+  box-shadow: 10px 10px 29px 1px rgba(10,2,10,0.53);
+}

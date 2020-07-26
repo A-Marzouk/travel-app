@@ -11,6 +11,7 @@ function handleFormSubmit(event) {
     // take the value entered in the input
     let locationInput = document.getElementById('locationInput').value;
     let dateInput = document.getElementById('dateInput').value;
+    let endDateInput = document.getElementById('dateInputEnd').value;
 
     // validate the form input
     if (!validateLocation(locationInput)) {

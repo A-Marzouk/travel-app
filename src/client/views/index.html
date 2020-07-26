@@ -19,20 +19,26 @@
 
         <h2>Where is your next trip? </h2>
 
-        <form id="textEvaluateForm" onsubmit="return Client.handleFormSubmit(event)">
+        <form id="textEvaluateForm" onsubmit="return Client.handleFormSubmit(event)" class="mb-5">
             <div class="form-group">
                 <label for="locationInput">Location:</label>
                 <input type="text" class="form-control" id="locationInput" name="locationInput"  placeholder="Enter location..." required>
                 <div id="errorFeedback" class="error"></div>
             </div>
             <div class="form-group">
-                <label for="dateInput">Date of the trip:</label>
-                <input type="date" class="form-control" id="dateInput" name="dateInput"  placeholder="Enter Date..." required>
-                <div id="dateErrorFeedback" class="error"></div>
+                <label for="dateInput">Start date:</label>
+                <input type="date" class="form-control" id="dateInput" name="dateInput"  placeholder="Enter Start Date..." required>
+                <div id="dateStartErrorFeedback" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="dateInputEnd">End date:</label>
+                <input type="date" class="form-control" id="dateInputEnd" name="dateInputEnd"  placeholder="Enter End Date..." required>
+                <div id="dateEndErrorFeedback" class="error"></div>
             </div>
             <button type="submit" class="btn btn-primary">Get Information</button>
         </form>
 
+        <hr style="color: white;">
 
         <div id="evaluationWrapper" class="evaluationText">
             <hr>
