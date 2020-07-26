@@ -1,0 +1,26 @@
+.trips{
+  .trip-item{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 30px;
+
+    img{
+      width: 300px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+
+    .trip-info{
+      .weather-icon{
+        width: 30px;
+        height: auto;
+      }
+    }
+
+  }
+}

@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <h1>Travel Planning App</h1>
+        <h1>Travel Planner</h1>
     </header>
 
 
@@ -38,18 +38,27 @@
             <button type="submit" class="btn btn-primary">Get Information</button>
         </form>
 
-        <hr style="color: white;">
+        <hr>
 
-        <div id="evaluationWrapper" class="evaluationText">
-            <hr>
-            <h4>
-                Latitude and Longitude:
-            </h4>
+        <h2 class="mb-3">My Trips</h2>
 
-            <div id="evaluation">
-
+        <div class="trips" id="trips">
+            <div class="trip-item">
+                <img src="https://pixabay.com/get/52e2d24a4355b108f5d0846096293078113bd9ed544c704c7c2a7cdc9e4bc35b_1280.jpg" alt="city image" id="trip-image">
+                <div class="trip-info">
+                    <p>City: London, United Kingdom</p>
+                    <p>Weather: </p>
+                    <ul>
+                        <li>Clouds: 71</li>
+                        <li>Temp: 20 C° <img class="weather-icon" src="https://www.weatherbit.io/static/img/icons/c02d.png" alt="weather icon"></li>
+                        <li>Wind speed: 0.89 m/s</li>
+                        <li>Description: Scattered clouds"</li>
+                    </ul>
+                </div>
+                <div>
+                    Trip duration: 12 days.
+                </div>
             </div>
-
         </div>
 
     </div>

@@ -1,5 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./homepage";
+@import "./trips";
 body {
-  background: lightblue;
+  background-image: url("https://pixabay.com/get/51e3d4414b51b108f5d0846096293078113bd9ed544c704c7c2a7cdc9f4cc75f_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }

@@ -1,8 +1,8 @@
 // make sure to export the function you would like to import
 
 const errorElement = document.getElementById('errorFeedback');
-const evaluationElement = document.getElementById('evaluation');
-const evaluationElementWrapper = document.getElementById('evaluationWrapper');
+
+
 
 function handleFormSubmit(event) {
     errorElement.innerText = '';
@@ -21,12 +21,10 @@ function handleFormSubmit(event) {
     }
 
     // send it to the server ( to get info through the API )
-    Client.postData('/location-info', {locationInput: locationInput, dateInput: dateInput})
+    Client.postData('/location-info', {locationInput: locationInput, dateInput: dateInput, endDateInput:endDateInput})
         .then((response) => {
             // update layout with result from server:
             console.log(response);
-            evaluationElement.innerHTML = response.locationData;
-            evaluationElementWrapper.style.display = 'block';
         });
 
 
