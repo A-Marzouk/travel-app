@@ -49,9 +49,10 @@ function getTripItem(response){
 
 function addItem(tripItem){
     let tripsWrapper = document.getElementById('trips');
+    let childCount = tripsWrapper.children.length;
     let newDev = document.createElement('div');
-    newDev.innerHTML = `<div class="trip-item">
-                <img src="${tripItem.image}" alt="city image" id="trip-image">
+    newDev.innerHTML = `<div class="trip-item" id="tripItem_${childCount+1}">
+                <img src="${tripItem.image}" alt="city image">
                 <div class="trip-info">
                     <p>City: ${tripItem.location.city}, ${tripItem.location.country}</p>
                     <p>Weather: </p>
@@ -68,7 +69,8 @@ function addItem(tripItem){
             </div>`;
 
     tripsWrapper.appendChild(newDev);
-    console.log('called');
+    let lineDev = document.getElementById('line-title');
+    lineDev.style.display = 'block';
 }
 
 function validateLocation(value) {

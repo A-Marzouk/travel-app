@@ -15,7 +15,7 @@
     </header>
 
 
-    <div class="container mt-5 mb-5">
+    <div class="container main">
 
         <h2>Where is your next trip? </h2>
 
@@ -38,9 +38,12 @@
             <button type="submit" class="btn btn-primary">Get Information</button>
         </form>
 
-        <hr>
 
-        <h2 class="mb-3">My Trips</h2>
+        <div id="line-title">
+            <hr>
+            <h2 class="mb-3">My Trips</h2>
+        </div>
+
 
         <div class="trips" id="trips"></div>
 
@@ -61,7 +64,12 @@
 
         // allow only future dates:
         let currentDate = new Date();
-        document.querySelector('#dateInput').setAttribute('min', currentDate.toISOString().substring(0,10));
+        let startDate =  document.querySelector('#dateInput');
+        let endDate =  document.querySelector('#dateInputEnd');
+        startDate.setAttribute('min', currentDate.toISOString().substring(0,10));
+        endDate.setAttribute('min', currentDate.toISOString().substring(0,10));
+
+
     </script>
 
 </body>
