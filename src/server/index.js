@@ -40,6 +40,9 @@ app.get('/', function (req, res) {
 app.post('/location-info', function (req, res) {
     let city = req.body.locationInput;
     let date = req.body.dateInput;
+    let endDate = req.body.endDateInput;
+
+    let tripDuration = getTripDuration(date, endDate);
 
 
     getGeoInfo(city)
@@ -49,7 +52,7 @@ app.post('/location-info', function (req, res) {
                 .then( (weatherData) => {
                     getImageOfLocation(city)
                         .then((cityImages) => {
-                            res.send({locationData: geoInfo, weatherData: weatherData.data, cityImages: cityImages});
+                            res.send({locationData: geoInfo, weatherData: weatherData.data, cityImages: cityImages, duration: tripDuration});
                         });
                 });
         });
@@ -65,7 +68,8 @@ const getGeoInfo = async (location = '') => {
         return {
             'lng': response.data.geonames[0].lng,
             'lat': response.data.geonames[0].lat,
-            'country': response.data.geonames[0].countryName
+            'country': response.data.geonames[0].countryName,
+            'city': location,
         };
     } catch (err) {
         console.error(err);
@@ -99,6 +103,11 @@ const getWeatherForecast = async (geoInfo = {}, date) => {
 
 const dateDifferenceInDays = (date) => {
     const diffTime = Math.abs(new Date() - new Date(date));
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+};
+
+const getTripDuration = (date, endDate) => {
+    const diffTime = Math.abs(new Date(endDate) - new Date(date));
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 };
 
