@@ -11,3 +11,9 @@ plan his next travel.
 
 ## Technologies
 Node.js | Express 
+
+## Some added features:
+- Add end date and display length of trip.
+- Incorporate icons into forecast.
+- Allow the user to add additional trips (this may take some heavy reworking, but is worth the challenge).
+- Use of localStorage.

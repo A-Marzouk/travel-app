@@ -22,6 +22,7 @@ h1{
 
 form{
   max-width: 450px;
+  max-height: 400px;
   padding:40px;
   margin-top: 20px;
   background: white;
@@ -30,7 +31,25 @@ form{
   -webkit-box-shadow: 10px 10px 29px 1px rgba(10,2,10,0.53);
   -moz-box-shadow: 10px 10px 29px 1px rgba(10,2,10,0.53);
   box-shadow: 10px 10px 29px 1px rgba(10,2,10,0.53);
+  transition: all 0.5s;
+
 }
+
+form.hidden{
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#addTripBtn{
+  display: none;
+}
+
+#addTripBtn.shown{
+  display: block;
+}
+
 
 #line-title{
   display: none;
