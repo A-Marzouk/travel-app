@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static('dist'));
 
 // listen to port
-app.listen(PORT, function () {
+let server = app.listen(PORT, function () {
     console.log('Server is listening on port 5000!')
 });
 
@@ -123,3 +123,5 @@ const getLastYearDates = (date) => {
         end:   lastYearPlusDay.toISOString().split('T')[0]
     };
 };
+
+module.exports = server;
