@@ -36,7 +36,6 @@ let server = app.listen(PORT, function () {
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('dist/index.html'));
 });
-
 app.post('/location-info', function (req, res) {
     let city = req.body.locationInput;
     let date = req.body.dateInput;
@@ -72,7 +71,7 @@ const getGeoInfo = async (location = '') => {
             'city': location,
         };
     } catch (err) {
-        console.error(err);
+        console.log(err);
     }
 };
 
@@ -82,7 +81,7 @@ const getImageOfLocation = async (city = '') => {
         const response = await axios.get(url);
         return response.data;
     } catch (err) {
-        console.error(err);
+        console.log(err);
     }
 };
 
@@ -97,7 +96,7 @@ const getWeatherForecast = async (geoInfo = {}, date) => {
         const response = await axios.get(url);
         return response.data ;
     } catch (err) {
-        console.error(err);
+        console.log(err);
     }
 };
 
